@@ -1,0 +1,74 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int main()
+{
+
+ struct piao
+ {
+ 
+	 char originst[20];
+	 char terminal[20];
+	 float fare;
+	 char train[20];
+ }xinxi[500];
+ 
+ int i,d=0,m,n;
+ char s[20];
+ for(i=0;i<100;i++)
+ {
+	 scanf("%s %s %s %f",xinxi[i].train,xinxi[i].originst,xinxi[i].terminal,&xinxi[i].fare);
+	 if(xinxi[i].fare<0)
+		 break;
+	 d++;
+ }
+
+ scanf("%d",&m);
+	 if(m==3)
+		 scanf("%d",&n);
+	 else
+		 scanf("%s",s);
+
+ if(m==1)
+ {
+ 
+	 for(i=0;i<d;i++)
+	 {
+		 if(strcmp(s,xinxi[i].originst)==0)
+          printf("%s %s %s %.1f\n",xinxi[i].train,xinxi[i].originst,xinxi[i].terminal,xinxi[i].fare);
+	 }
+   
+ }
+
+  if(m==2)
+ {
+	 for(i=0;i<d;i++)
+	 {
+		 if(strcmp(s,xinxi[i].terminal)==0)
+          printf("%s %s %s %.1f\n",xinxi[i].train,xinxi[i].originst,xinxi[i].terminal,xinxi[i].fare);
+	 }
+ } 
+
+
+  if(m==3)
+ {
+	 for(i=0;i<d;i++)
+	 {
+		 if(xinxi[i].fare<n)
+          printf("%s %s %s %.1f\n",xinxi[i].train,xinxi[i].originst,xinxi[i].terminal,xinxi[i].fare);
+	 }
+ }
+
+
+  if(m==4)
+ {
+	 for(i=0;i<d;i++)
+	 {
+		 if(strcmp(s,xinxi[i].train)==0)
+      printf("%s %s %s %.1f\n",xinxi[i].train,xinxi[i].originst,xinxi[i].terminal,xinxi[i].fare);
+	 }
+ }
+
+ system("pause");
+ return 0;
+}
